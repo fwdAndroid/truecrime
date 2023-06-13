@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:truecrime/auth/email_signup.dart';
+import 'package:truecrime/auth/signin_email.dart';
 
-class SignInEmail extends StatefulWidget {
-  const SignInEmail({super.key});
+class EmailSignUp extends StatefulWidget {
+  const EmailSignUp({super.key});
 
   @override
-  State<SignInEmail> createState() => _SignInEmailState();
+  State<EmailSignUp> createState() => _EmailSignUpState();
 }
 
-class _SignInEmailState extends State<SignInEmail> {
+class _EmailSignUpState extends State<EmailSignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,6 +17,17 @@ class _SignInEmailState extends State<SignInEmail> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Container(
+            margin: EdgeInsets.only(left: 15, right: 15),
+            child: TextFormField(
+              style: TextStyle(color: Colors.white),
+              decoration: InputDecoration(
+                  hintText: "Name", hintStyle: TextStyle(color: Colors.white)),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
           Container(
             margin: EdgeInsets.only(left: 15, right: 15),
             child: TextFormField(
@@ -40,22 +51,13 @@ class _SignInEmailState extends State<SignInEmail> {
           SizedBox(
             height: 10,
           ),
-          Align(
-            alignment: Alignment.topLeft,
-            child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  "Forgot Password",
-                  style: TextStyle(color: Colors.white),
-                )),
-          ),
-          SizedBox(
-            height: 10,
-          ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (builder) => SignInEmail()));
+            },
             child: Text(
-              "Login",
+              "Sign Up",
               style: TextStyle(color: Colors.white),
             ),
             style: ElevatedButton.styleFrom(
@@ -69,10 +71,10 @@ class _SignInEmailState extends State<SignInEmail> {
             child: TextButton(
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (builder) => EmailSignUp()));
+                      MaterialPageRoute(builder: (builder) => SignInEmail()));
                 },
                 child: Text(
-                  "Create Account",
+                  "Already an Account",
                   style: TextStyle(color: Colors.white),
                 )),
           ),
