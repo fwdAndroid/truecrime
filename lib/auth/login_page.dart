@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:social_login_buttons/social_login_buttons.dart';
+import 'package:truecrime/auth/signin_email.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -69,9 +70,15 @@ class _LoginPageState extends State<LoginPage> {
           SizedBox(
             height: 20,
           ),
-          Container(
-              margin: EdgeInsets.only(left: 12, right: 12),
-              child: Image.asset("assets/btn.png"))
+          InkWell(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (builder) => SignInEmail()));
+            },
+            child: Container(
+                margin: EdgeInsets.only(left: 12, right: 12),
+                child: Image.asset("assets/btn.png")),
+          )
         ],
       ),
     );
