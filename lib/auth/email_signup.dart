@@ -17,6 +17,22 @@ class _EmailSignUpState extends State<EmailSignUp> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          SizedBox(
+            height: 50,
+          ),
+          Center(
+            child: Text(
+              "Sign up",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          SizedBox(
+            height: 50,
+          ),
           Container(
             margin: EdgeInsets.only(left: 15, right: 15),
             child: TextFormField(
