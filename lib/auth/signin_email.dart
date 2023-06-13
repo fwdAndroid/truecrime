@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:truecrime/auth/email_signup.dart';
+import 'package:truecrime/auth/forgot_password.dart';
 
 class SignInEmail extends StatefulWidget {
   const SignInEmail({super.key});
@@ -59,7 +60,12 @@ class _SignInEmailState extends State<SignInEmail> {
           Align(
             alignment: Alignment.topLeft,
             child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (builder) => ForgotPassword()));
+                },
                 child: Text(
                   "Forgot Password",
                   style: TextStyle(color: Colors.white),
