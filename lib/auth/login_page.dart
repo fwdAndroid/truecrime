@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:social_login_buttons/social_login_buttons.dart';
 import 'package:truecrime/auth/signin_email.dart';
+import 'package:truecrime/dashboard/main_screen.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -47,7 +48,10 @@ class _LoginPageState extends State<LoginPage> {
               textColor: Colors.white,
               backgroundColor: Colors.black,
               buttonType: SocialLoginButtonType.google,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (builder) => MainScreen()));
+              },
             ),
           ),
           SizedBox(
@@ -64,7 +68,10 @@ class _LoginPageState extends State<LoginPage> {
               textColor: Colors.white,
               backgroundColor: Colors.black,
               buttonType: SocialLoginButtonType.appleBlack,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (builder) => MainScreen()));
+              },
             ),
           ),
           SizedBox(
