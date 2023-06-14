@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
+import 'package:truecrime/widget_pages/productivity_tab.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -30,12 +31,18 @@ class _HomePageState extends State<HomePage> {
               color: Colors.white,
             ),
           ),
-          Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Image.asset(
-                "assets/f.png",
-                height: 22,
-              ))
+          InkWell(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (builder) => TagsProductivity()));
+            },
+            child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Image.asset(
+                  "assets/f.png",
+                  height: 22,
+                )),
+          )
         ],
       ),
       backgroundColor: Color(0xff9F4444),
