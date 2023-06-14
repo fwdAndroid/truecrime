@@ -30,8 +30,59 @@ class _SearchPageState extends State<SearchPage> {
           ),
           InkWell(
             onTap: () {
-              // Navigator.push(context,
-              //     MaterialPageRoute(builder: (builder) => TagsProductivity()));
+              showModalBottomSheet<void>(
+                context: context,
+                builder: (BuildContext context) {
+                  return Container(
+                    width: MediaQuery.of(context).size.width,
+                    color: Color(0xff5A5F67),
+                    height: 200,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          const Text(
+                            'Sorted By',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          const Text(
+                            'Recent',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          const Text(
+                            'Recently Added',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          const Text(
+                            'Alphabetically',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              );
             },
             child: Padding(
                 padding: const EdgeInsets.all(8.0),
