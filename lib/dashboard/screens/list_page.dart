@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:truecrime/library_search/library_search.dart';
 import 'package:truecrime/listtab/downloads.dart';
 import 'package:truecrime/listtab/listen.dart';
 import 'package:truecrime/listtab/playlists.dart';
@@ -22,11 +23,17 @@ class _ListPageState extends State<ListPage> {
         backgroundColor: Color(0xff222831),
         appBar: AppBar(
           actions: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Icon(
-                Icons.search,
-                color: Colors.white,
+            InkWell(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (builder) => LibrarySearch()));
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Icon(
+                  Icons.search,
+                  color: Colors.white,
+                ),
               ),
             ),
             Padding(
