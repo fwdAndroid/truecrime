@@ -26,7 +26,7 @@ class _MainScreenState extends State<MainScreen> {
         bucket: bucket,
       ),
       bottomNavigationBar: BottomAppBar(
-        color: Colors.black,
+        color: Color(0xff222831),
         child: Container(
           height: 30,
           child: Row(
