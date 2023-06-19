@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:truecrime/podscast_player/pods_casts.dart';
 
 class Listen extends StatefulWidget {
   const Listen({super.key});
@@ -18,6 +19,12 @@ class _ListenState extends State<Listen> {
             return Column(
               children: [
                 ListTile(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (builder) => PodsCastPlayer()));
+                  },
                   leading: Image.asset("assets/image 3.png"),
                   title: Text(
                     "Thursday Afternoon Monday Morning Podcast 5-11-23",
