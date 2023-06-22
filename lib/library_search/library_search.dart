@@ -11,6 +11,7 @@ class LibrarySearch extends StatefulWidget {
 }
 
 class _LibrarySearchState extends State<LibrarySearch> {
+  TextEditingController controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -39,13 +40,16 @@ class _LibrarySearchState extends State<LibrarySearch> {
           automaticallyImplyLeading: false,
           actions: [
             TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  controller.clear();
+                },
                 child: Text(
                   "Cancel",
                   style: TextStyle(color: Color(0xff00ADB5)),
                 ))
           ],
           title: TextFormField(
+            controller: controller,
             style: TextStyle(color: Colors.white),
             decoration: InputDecoration(
                 focusedBorder: OutlineInputBorder(
