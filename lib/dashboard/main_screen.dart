@@ -47,7 +47,7 @@ class _MainScreenState extends State<MainScreen> {
                   children: <Widget>[
                     Icon(
                       Icons.home,
-                      color: Colors.white,
+                      color: currentTab == 0 ? Colors.white : Color(0xff818790),
                       size: 20,
                     )
                   ],
@@ -70,7 +70,7 @@ class _MainScreenState extends State<MainScreen> {
                   children: <Widget>[
                     Icon(
                       Icons.search,
-                      color: Colors.white,
+                      color: currentTab == 1 ? Colors.white : Color(0xff818790),
                       size: 20,
                     )
                   ],
@@ -91,7 +91,7 @@ class _MainScreenState extends State<MainScreen> {
                   children: <Widget>[
                     Icon(
                       Icons.list,
-                      color: Colors.white,
+                      color: currentTab == 2 ? Colors.white : Color(0xff818790),
                       size: 20,
                     )
                   ],
