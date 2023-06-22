@@ -55,7 +55,7 @@ class _ShortsState extends State<Shorts> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "Marach 23, 1hr 12min",
+                            "Marach 23. 1hr 12min",
                             style: TextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w400,

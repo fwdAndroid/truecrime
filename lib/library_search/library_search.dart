@@ -24,7 +24,6 @@ class _LibrarySearchState extends State<LibrarySearch> {
             indicatorColor: Color(0xff00ADB5),
             unselectedLabelColor: Colors.white,
             labelColor: Color(0xff00ADB5),
-            labelStyle: TextStyle(fontSize: 12),
             tabs: <Widget>[
               Tab(
                 text: "Podscasts",
@@ -64,10 +63,14 @@ class _LibrarySearchState extends State<LibrarySearch> {
                 fillColor: Color(0xff5A5F67),
                 hintText: "Search word",
                 hintStyle: TextStyle(color: Colors.white),
-                suffixIcon: Icon(
-                  Icons.close,
-                  color: Colors.white,
-                ),
+                suffixIcon: IconButton(
+                    onPressed: () {
+                      controller.clear();
+                    },
+                    icon: Icon(
+                      Icons.close,
+                      color: Colors.white,
+                    )),
                 prefixIcon: Icon(
                   Icons.search,
                   color: Colors.white,
