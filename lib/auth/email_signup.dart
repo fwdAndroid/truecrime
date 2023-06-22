@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:social_login_buttons/social_login_buttons.dart';
+import 'package:truecrime/auth/email_signup.dart';
+import 'package:truecrime/auth/login_page.dart';
 import 'package:truecrime/auth/signin_email.dart';
+import 'package:truecrime/auth/signup/signup_email.dart';
 
 class EmailSignUp extends StatefulWidget {
   const EmailSignUp({super.key});
@@ -15,85 +19,147 @@ class _EmailSignUpState extends State<EmailSignUp> {
       backgroundColor: Color(0xff222831),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(
-            height: 50,
+          Container(
+            margin: EdgeInsets.only(top: 60),
+            child: Padding(
+              padding: EdgeInsets.all(20),
+              child: Center(
+                child: Image.asset(
+                  "assets/logo.png",
+                  width: 150,
+                  height: 150,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
           ),
-          Center(
+          SizedBox(
+            width: 319,
             child: Text(
-              "Sign up",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold),
+              'Sign up to True Crime\n Pods',
               textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 25,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w600,
+              ),
             ),
-          ),
-          SizedBox(
-            height: 50,
           ),
           Container(
-            margin: EdgeInsets.only(left: 15, right: 15),
-            child: TextFormField(
-              style: TextStyle(color: Colors.white),
-              decoration: InputDecoration(
-                  hintText: "Name", hintStyle: TextStyle(color: Colors.white)),
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
+              margin: EdgeInsets.all(20),
+              width: 300,
+              height: 50,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  color: Colors.white,
+                  border: Border.all(color: Colors.white)),
+              child: SocialLoginButton(
+                borderRadius: 30,
+                text: "Sign Up with Google",
+                textColor: Colors.white,
+                buttonType: SocialLoginButtonType.google,
+                onPressed: () {},
+                backgroundColor: Color(0xff222831),
+              )),
           Container(
-            margin: EdgeInsets.only(left: 15, right: 15),
-            child: TextFormField(
-              style: TextStyle(color: Colors.white),
-              decoration: InputDecoration(
-                  hintText: "Email", hintStyle: TextStyle(color: Colors.white)),
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Container(
-            margin: EdgeInsets.only(left: 15, right: 15),
-            child: TextFormField(
-              style: TextStyle(color: Colors.white),
-              decoration: InputDecoration(
-                  hintText: "Password",
-                  hintStyle: TextStyle(color: Colors.white)),
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          ElevatedButton(
-            onPressed: () {
+              width: 300,
+              height: 50,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  color: Colors.white,
+                  border: Border.all(color: Colors.white)),
+              child: SocialLoginButton(
+                borderRadius: 30,
+                text: "Sign Up with Apple",
+                textColor: Colors.white,
+                fontSize: 17,
+                buttonType: SocialLoginButtonType.appleBlack,
+                onPressed: () {},
+                backgroundColor: Color(0xff222831),
+              )),
+          InkWell(
+            onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (builder) => SignInEmail()));
+                  MaterialPageRoute(builder: (builder) => SignUpwitheEmail()));
             },
-            child: Text(
-              "Sign Up",
-              style: TextStyle(color: Colors.white),
-            ),
-            style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xff00ADB5), fixedSize: Size(300, 50)),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Align(
-            alignment: Alignment.center,
-            child: TextButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (builder) => SignInEmail()));
-                },
-                child: Text(
-                  "Already an Account",
-                  style: TextStyle(color: Colors.white),
+            child: Container(
+                margin: EdgeInsets.all(20),
+                width: 300,
+                height: 50,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50),
+                    color: Color(0xff222831),
+                    border: Border.all(color: Colors.white)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Image.asset(
+                      "assets/person.png",
+                      width: 22,
+                      height: 22,
+                    ),
+                    Text(
+                      "Sign Up with Email",
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                    Text(
+                      "User",
+                      style: TextStyle(
+                        fontSize: 21,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xff222831),
+                      ),
+                    )
+                  ],
                 )),
           ),
+          Spacer(),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              width: 390,
+              height: 66,
+              decoration: BoxDecoration(color: Color(0xFF595E66)),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    'Already have an account?',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 17,
+                      fontFamily: 'Source Sans 3',
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  const SizedBox(width: 3),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (builder) => LoginPage()));
+                    },
+                    child: Text(
+                      'Log in',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Color(0xFF90D1D5),
+                        fontSize: 15,
+                        fontFamily: 'Source Sans 3',
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          )
         ],
       ),
     );

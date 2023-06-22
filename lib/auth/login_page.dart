@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:social_login_buttons/social_login_buttons.dart';
+import 'package:truecrime/auth/email_signup.dart';
 import 'package:truecrime/auth/signin_email.dart';
 
 class LoginPage extends StatefulWidget {
@@ -137,14 +138,22 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   const SizedBox(width: 3),
-                  Text(
-                    'Sign Up',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Color(0xFF90D1D5),
-                      fontSize: 15,
-                      fontFamily: 'Source Sans 3',
-                      fontWeight: FontWeight.w600,
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (builder) => EmailSignUp()));
+                    },
+                    child: Text(
+                      'Sign Up',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Color(0xFF90D1D5),
+                        fontSize: 15,
+                        fontFamily: 'Source Sans 3',
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
                 ],
