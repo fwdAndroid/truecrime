@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:social_login_buttons/social_login_buttons.dart';
-import 'package:truecrime/auth/signin_email.dart';
-import 'package:truecrime/dashboard/main_screen.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -14,77 +12,137 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xff222831),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(
-            "assets/logo.png",
-            width: 100,
-            height: 100,
-            fit: BoxFit.cover,
-          ),
-          SizedBox(
-            height: 14,
-          ),
-          Text(
-            "Sign up for True Crime\nPods",
-            style: TextStyle(
-                color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
-          ),
-          SizedBox(
-            height: 20,
-          ),
           Container(
-            decoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: Colors.white)),
-            margin: EdgeInsets.only(left: 12, right: 12),
-            child: SocialLoginButton(
-              borderRadius: 20,
-              textColor: Colors.white,
-              backgroundColor: Colors.black,
-              buttonType: SocialLoginButtonType.google,
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (builder) => MainScreen()));
-              },
+            margin: EdgeInsets.only(top: 60),
+            child: Padding(
+              padding: EdgeInsets.all(20),
+              child: Center(
+                child: Image.asset(
+                  "assets/logo.png",
+                  width: 150,
+                  height: 150,
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
           ),
           SizedBox(
-            height: 20,
-          ),
-          Container(
-            decoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: Colors.white)),
-            margin: EdgeInsets.only(left: 12, right: 12),
-            child: SocialLoginButton(
-              borderRadius: 20,
-              textColor: Colors.white,
-              backgroundColor: Colors.black,
-              buttonType: SocialLoginButtonType.appleBlack,
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (builder) => MainScreen()));
-              },
+            width: 319,
+            child: Text(
+              'Sign in to True Crime\n Pods',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 25,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
-          SizedBox(
-            height: 20,
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (builder) => SignInEmail()));
-            },
+          Container(
+              margin: EdgeInsets.all(20),
+              width: 300,
+              height: 50,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  color: Colors.white,
+                  border: Border.all(color: Colors.white)),
+              child: SocialLoginButton(
+                borderRadius: 30,
+                text: "Continue with Google",
+                textColor: Colors.white,
+                buttonType: SocialLoginButtonType.google,
+                onPressed: () {},
+                backgroundColor: Color(0xff222831),
+              )),
+          Container(
+              width: 300,
+              height: 50,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  color: Colors.white,
+                  border: Border.all(color: Colors.white)),
+              child: SocialLoginButton(
+                borderRadius: 30,
+                text: "Continue with Apple",
+                textColor: Colors.white,
+                fontSize: 17,
+                buttonType: SocialLoginButtonType.appleBlack,
+                onPressed: () {},
+                backgroundColor: Color(0xff222831),
+              )),
+          Container(
+              margin: EdgeInsets.all(20),
+              width: 300,
+              height: 50,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  color: Color(0xff222831),
+                  border: Border.all(color: Colors.white)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Image.asset(
+                    "assets/person.png",
+                    width: 22,
+                    height: 22,
+                  ),
+                  Text(
+                    "User Email",
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                  Text(
+                    "User Email",
+                    style: TextStyle(
+                      fontSize: 21,
+                      fontWeight: FontWeight.w500,
+                      color: Color(0xff222831),
+                    ),
+                  )
+                ],
+              )),
+          Spacer(),
+          Align(
+            alignment: Alignment.bottomCenter,
             child: Container(
-                margin: EdgeInsets.only(left: 12, right: 12),
-                child: Image.asset("assets/btn.png")),
+              width: 390,
+              height: 66,
+              decoration: BoxDecoration(color: Color(0xFF595E66)),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    'Don’t have an account?',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 17,
+                      fontFamily: 'Source Sans 3',
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  const SizedBox(width: 3),
+                  Text(
+                    'Sign Up',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Color(0xFF90D1D5),
+                      fontSize: 15,
+                      fontFamily: 'Source Sans 3',
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           )
         ],
       ),

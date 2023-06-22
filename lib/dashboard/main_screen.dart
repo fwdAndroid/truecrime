@@ -38,7 +38,7 @@ class _MainScreenState extends State<MainScreen> {
                 onPressed: () {
                   setState(() {
                     currentScreen =
-                        const HomePage(); // if user taps on this dashboard tab will be active
+                        const HomePage(); // if` user taps on this dashboard tab will be active
                     currentTab = 0;
                   });
                 },
