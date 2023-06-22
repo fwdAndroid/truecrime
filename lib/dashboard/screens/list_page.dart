@@ -49,7 +49,6 @@ class _ListPageState extends State<ListPage> {
             indicatorColor: Color(0xff00ADB5),
             unselectedLabelColor: Colors.white,
             labelColor: Color(0xff00ADB5),
-            labelStyle: TextStyle(fontSize: 12),
             tabs: <Widget>[
               Tab(
                 text: "Podscasts",

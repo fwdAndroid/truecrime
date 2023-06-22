@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
+import 'package:truecrime/dashboard/screens/home_search.dart';
 import 'package:truecrime/widget_pages/productivity_tab.dart';
 
 class HomePage extends StatefulWidget {
@@ -25,11 +26,17 @@ class _HomePageState extends State<HomePage> {
         automaticallyImplyLeading: false,
         elevation: 0,
         actions: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Icon(
-              Icons.search,
-              color: Colors.white,
+          InkWell(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (builder) => HomeSearch()));
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Icon(
+                Icons.search,
+                color: Colors.white,
+              ),
             ),
           ),
           InkWell(
@@ -51,6 +58,8 @@ class _HomePageState extends State<HomePage> {
       body: Container(
         decoration: BoxDecoration(
           gradient: new LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
             colors: [
               Color(0xff9F4444),
               Color(0xff222831),
@@ -77,22 +86,6 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     Image.asset("assets/Frame 60.png"),
-                    Slider(
-                        value: valueHolder.toDouble(),
-                        min: 1,
-                        max: 100,
-                        divisions: 100,
-                        activeColor: Colors.green,
-                        inactiveColor: Colors.grey,
-                        label: '${valueHolder.round()}',
-                        onChanged: (double newValue) {
-                          setState(() {
-                            valueHolder = newValue.round();
-                          });
-                        },
-                        semanticFormatterCallback: (double newValue) {
-                          return '${newValue.round()}';
-                        }),
                     Container(
                       margin: EdgeInsets.only(left: 10, top: 5),
                       width: 370,
@@ -104,6 +97,32 @@ class _HomePageState extends State<HomePage> {
                             color: Colors.white,
                             fontWeight: FontWeight.w500),
                       ),
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 30,
+                      child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.all(2.0),
+                              child: Container(
+                                width: 87,
+                                height: 22,
+                                decoration: BoxDecoration(
+                                    color: Color(0xff6D727B),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(50))),
+                                child: Center(
+                                  child: Text(
+                                    "#Productivity",
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 10),
+                                  ),
+                                ),
+                              ),
+                            );
+                          }),
                     ),
                     Container(
                       margin: EdgeInsets.only(left: 10, right: 10, top: 10),
@@ -156,7 +175,6 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
-                    Divider()
                   ],
                 );
               }),
