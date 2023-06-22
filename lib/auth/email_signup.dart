@@ -4,6 +4,7 @@ import 'package:truecrime/auth/email_signup.dart';
 import 'package:truecrime/auth/login_page.dart';
 import 'package:truecrime/auth/signin_email.dart';
 import 'package:truecrime/auth/signup/signup_email.dart';
+import 'package:truecrime/dashboard/main_screen.dart';
 
 class EmailSignUp extends StatefulWidget {
   const EmailSignUp({super.key});
@@ -60,7 +61,10 @@ class _EmailSignUpState extends State<EmailSignUp> {
                 text: "Sign Up with Google",
                 textColor: Colors.white,
                 buttonType: SocialLoginButtonType.google,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (builder) => MainScreen()));
+                },
                 backgroundColor: Color(0xff222831),
               )),
           Container(
@@ -76,7 +80,10 @@ class _EmailSignUpState extends State<EmailSignUp> {
                 textColor: Colors.white,
                 fontSize: 17,
                 buttonType: SocialLoginButtonType.appleBlack,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (builder) => MainScreen()));
+                },
                 backgroundColor: Color(0xff222831),
               )),
           InkWell(
