@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:social_login_buttons/social_login_buttons.dart';
+import 'package:truecrime/auth/signin_email.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -75,38 +76,44 @@ class _LoginPageState extends State<LoginPage> {
                 onPressed: () {},
                 backgroundColor: Color(0xff222831),
               )),
-          Container(
-              margin: EdgeInsets.all(20),
-              width: 300,
-              height: 50,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  color: Color(0xff222831),
-                  border: Border.all(color: Colors.white)),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Image.asset(
-                    "assets/person.png",
-                    width: 22,
-                    height: 22,
-                  ),
-                  Text(
-                    "User Email",
-                    style: TextStyle(
-                      color: Colors.white,
+          InkWell(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (builder) => SignInEmail()));
+            },
+            child: Container(
+                margin: EdgeInsets.all(20),
+                width: 300,
+                height: 50,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50),
+                    color: Color(0xff222831),
+                    border: Border.all(color: Colors.white)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Image.asset(
+                      "assets/person.png",
+                      width: 22,
+                      height: 22,
                     ),
-                  ),
-                  Text(
-                    "User Email",
-                    style: TextStyle(
-                      fontSize: 21,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xff222831),
+                    Text(
+                      "User Email",
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
                     ),
-                  )
-                ],
-              )),
+                    Text(
+                      "User Email",
+                      style: TextStyle(
+                        fontSize: 21,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xff222831),
+                      ),
+                    )
+                  ],
+                )),
+          ),
           Spacer(),
           Align(
             alignment: Alignment.bottomCenter,

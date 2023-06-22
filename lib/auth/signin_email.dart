@@ -11,17 +11,28 @@ class SignInEmail extends StatefulWidget {
 }
 
 class _SignInEmailState extends State<SignInEmail> {
+  TextEditingController emailController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(
+            Icons.arrow_back_ios,
+            color: Colors.white,
+          ),
+        ),
+        iconTheme: IconThemeData(color: Colors.white),
+        backgroundColor: Color(0xff222831),
+      ),
       backgroundColor: Color(0xff222831),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(
-            height: 50,
-          ),
           Center(
             child: Text(
               "Log In",
@@ -33,14 +44,21 @@ class _SignInEmailState extends State<SignInEmail> {
             ),
           ),
           SizedBox(
-            height: 50,
+            height: 30,
           ),
           Container(
             margin: EdgeInsets.only(left: 15, right: 15),
             child: TextFormField(
+              controller: emailController,
               style: TextStyle(color: Colors.white),
               decoration: InputDecoration(
-                  hintText: "Email", hintStyle: TextStyle(color: Colors.white)),
+                  hintText: "Email",
+                  hintStyle: TextStyle(color: Colors.white),
+                  suffixIcon: IconButton(
+                      onPressed: () {
+                        emailController.clear();
+                      },
+                      icon: Icon(Icons.cancel))),
             ),
           ),
           SizedBox(
@@ -86,21 +104,6 @@ class _SignInEmailState extends State<SignInEmail> {
             ),
             style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xff00ADB5), fixedSize: Size(300, 50)),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Align(
-            alignment: Alignment.center,
-            child: TextButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (builder) => EmailSignUp()));
-                },
-                child: Text(
-                  "Create Account",
-                  style: TextStyle(color: Colors.white),
-                )),
           ),
         ],
       ),
