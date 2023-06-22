@@ -15,68 +15,40 @@ class _PodsCastState extends State<PodsCast> {
       backgroundColor: Color(0xff222831),
       body: Column(
         children: [
-          SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    Image.asset(
-                      "assets/image 3.png",
-                      height: 80,
-                      width: 80,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Image.asset(
-                      "assets/image 3.png",
-                      height: 80,
-                      width: 80,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Image.asset(
-                      "assets/image 3.png",
-                      height: 80,
-                      width: 80,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Image.asset(
-                      "assets/image 3.png",
-                      height: 80,
-                      width: 80,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Image.asset(
-                      "assets/image 3.png",
-                      height: 80,
-                      width: 80,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Image.asset(
-                      "assets/image 3.png",
-                      height: 80,
-                      width: 80,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Image.asset(
-                      "assets/image 3.png",
-                      height: 80,
-                      width: 80,
-                    ),
-                  ],
-                ),
-              )),
+          Container(
+            margin: EdgeInsets.only(top: 10),
+            height: 100,
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return Stack(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(top: 5),
+                        child: Image.asset(
+                          "assets/image 3.png",
+                          height: 80,
+                          width: 100,
+                        ),
+                      ),
+                      Positioned(
+                        left: 75,
+                        child: Container(
+                          width: 22,
+                          height: 22,
+                          decoration: BoxDecoration(
+                              color: Color(0xff00ADB5), shape: BoxShape.circle),
+                          child: Text(
+                            "1",
+                            style: TextStyle(color: Colors.white),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      )
+                    ],
+                  );
+                }),
+          ),
           Container(
             height: 400,
             child: ListView.builder(
